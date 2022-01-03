@@ -25,6 +25,9 @@ jobs:
         
       - name: Docker hub login
         run: echo "Logging into docker hub" | sudo docker login -u ${{secrets.DOCKERUSERNAME}} --password ${{secrets.DOCKERPASSWORD}}
+      
+      - name: Repository check out into the runner
+        uses: actions/checkout@v2
         
       - name: Push image
         run: echo "pushing image into docker hub" | sudo docker push mageshprabha/dockerrepo
