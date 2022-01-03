@@ -58,4 +58,4 @@ jobs:
           ls
           java -version
           python --version
-          python Python/pythoncode.py"
+          python /tmp/docker_vol/Python/pythoncode.py"
