@@ -42,7 +42,7 @@ jobs:
         run: python Python/pythoncode.py
         
       - name: Docker images list
-        run: docker images
+        run: docker images dockerrepo
         
       - name: Docker container list
         run: docker ps -a
