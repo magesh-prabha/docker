@@ -37,3 +37,6 @@ jobs:
         
       - name: Working inside container
         run: docker-compose exec -T con
+        
+      - name: Python
+        run: python pythoncode.py
