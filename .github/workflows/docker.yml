@@ -36,7 +36,7 @@ jobs:
         
       - name: Run container
         run: |
-          docker run -i --name=con mageshprabha/dockerrepo /bin/bash
+          docker run -i --name=con -v /tmp/migration_code/Python/:/tmp/migration_code/ mageshprabha/dockerrepo /bin/bash
           docker start con
           
       - name: List of files
