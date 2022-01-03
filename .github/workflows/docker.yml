@@ -30,7 +30,9 @@ jobs:
         run: echo "pushing image into docker hub" | sudo docker push mageshprabha/dockerrepo
         
       - name: Run container
-        run: docker run -i --name=con mageshprabha/dockerrepo /bin/bash
+        run: |
+          docker run -i --name=con mageshprabha/dockerrepo /bin/bash
+          docker start con
           
       - name: List of files
         run: ls
