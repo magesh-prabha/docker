@@ -36,7 +36,7 @@ jobs:
         
       - name: Run container
         run: |
-          docker run -i --name=con mageshprabha/dockerrepo /bin/bash
+          docker run -i --name=con /home/runner/work/docker/docker:/tmp/docker_vol/ mageshprabha/dockerrepo /bin/bash
           docker start con
           pwd
           
