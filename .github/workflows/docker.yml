@@ -51,3 +51,7 @@ jobs:
           docker exec -i con /bin/bash
           ls
           pwd
+          cd ..
+          ls
+          cd ..
+          ls
