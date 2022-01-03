@@ -12,7 +12,7 @@ on:
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
-  # This workflow contains a single job called "build"
+  # This workflow contains a single job called "image"
   image:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
@@ -27,14 +27,14 @@ jobs:
         run: echo This code creates a docker image and runs a docker container out of it
 
       - name: creates an docker image
-        run: docker build -t amarnathj/dockerrepo .
+        run: docker build -t mageshprabha/dockerrepo .
       - name: login to the docker hub
-        run: echo "Logging into docker hub" | sudo docker login -u "amarnathj" --password "amarnath123$"
+        run: echo "Logging into docker hub" | sudo docker login -u "mageshprabha" --password "Benz1234$"
       - name: push image
-        run: echo "pushing image into docker hub" | sudo docker push amarnathj/dockerrepo
+        run: echo "pushing image into docker hub" | sudo docker push mageshprabha/dockerrepo
       - name: run container
         run: |
-          docker run -i --name=con amarnathj/dockerrepo /bin/bash
+          docker run -i --name=con mageshprabha/dockerrepo /bin/bash
       - name: printing list of files
         run: ls
       - name: working inside container
