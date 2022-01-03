@@ -1,5 +1,5 @@
 FROM python:latest
-
+VOLUME /tmp/docker_vol/
 MAINTAINER Magesh Prabha <prabhabala100@gmail.com>
 
 RUN apt-get -qq update
