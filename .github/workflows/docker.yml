@@ -39,4 +39,4 @@ jobs:
         run: docker-compose exec -T con
         
       - name: Python
-        run: python pythoncode.py
+        run: python python/pythoncode.py
