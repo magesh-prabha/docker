@@ -35,9 +35,6 @@ jobs:
       - name: List of files
         run: ls
         
-      - name: Working inside container
-        run: docker-compose exec -T con
-        
       - name: Python
         run: python Python/pythoncode.py
         
@@ -46,3 +43,8 @@ jobs:
         
       - name: Docker container list
         run: docker ps -a
+        
+      - name: Working inside container
+        run: |
+          docker-compose exec -T con
+          ls
