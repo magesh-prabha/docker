@@ -28,6 +28,8 @@ jobs:
       
       - name: Repository check out into the runner
         uses: actions/checkout@v2
+        with:
+          fetch-depth: 2
         
       - name: Push image
         run: echo "pushing image into docker hub" | sudo docker push mageshprabha/dockerrepo
