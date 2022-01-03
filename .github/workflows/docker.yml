@@ -48,5 +48,5 @@ jobs:
         
       - name: Working inside container
         run: |
-          docker-compose exec -T con
+          docker exec -it con bash
           ls
