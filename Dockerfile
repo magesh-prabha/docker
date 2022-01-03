@@ -2,6 +2,8 @@ FROM python:latest
 RUN apt-get -qq update
 RUN apt-get install -y vim
 RUN apt-get install -y rsync
+RUN sudo apt-get install software-properties-common
+RUN sudo apt-get update
 
 RUN add-apt-repository ppa:openjdk-r/ppa && \
     apt-get update && \
