@@ -1,0 +1,44 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Creating a docker image and running a container
+
+# Controls when the workflow will run
+on:
+  # Triggers the workflow on push or pull request events but only for the main branch
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  # This workflow contains a single job called "build"
+  image:
+    # The type of runner that the job will run on
+    runs-on: ubuntu-latest
+
+    # Steps represent a sequence of tasks that will be executed as part of the job
+    steps:
+      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      - uses: actions/checkout@v2
+
+      # Runs a single command using the runners shell
+      - name: Description
+        run: echo This code creates a docker image and runs a docker container out of it
+
+      - name: creates an docker image
+        run: docker build -t amarnathj/dockerrepo .
+      - name: login to the docker hub
+        run: echo "Logging into docker hub" | sudo docker login -u "amarnathj" --password "amarnath123$"
+      - name: push image
+        run: echo "pushing image into docker hub" | sudo docker push amarnathj/dockerrepo
+      - name: run container
+        run: |
+          docker run -i --name=con amarnathj/dockerrepo /bin/bash
+      - name: printing list of files
+        run: ls
+      - name: working inside container
+        run: |
+          docker-compose exec -T con
+          ls -lart;
+          pwd;
