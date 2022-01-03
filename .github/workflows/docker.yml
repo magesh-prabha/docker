@@ -24,7 +24,7 @@ jobs:
         run: docker build -t mageshprabha/dockerrepo .
         
       - name: Docker hub login
-        run: echo "Logging into docker hub" | sudo docker login -u ${{secret.DockerUsername}} --password ${{secret.DockerPassword}}
+        run: echo "Logging into docker hub" | sudo docker login -u ${{secrets.DOCKERUSERNAME}} --password ${{secrets.DOCKERPASSWORD}}
         
       - name: Push image
         run: echo "pushing image into docker hub" | sudo docker push mageshprabha/dockerrepo
