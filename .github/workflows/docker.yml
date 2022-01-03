@@ -51,5 +51,5 @@ jobs:
           docker exec -i con /bin/bash -c "pwd
           ls
           java -version
-          python
+          python --version
           python Python/pythoncode.py"
