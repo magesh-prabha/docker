@@ -48,5 +48,5 @@ jobs:
         
       - name: Working inside container
         run: |
-          docker exec -it con bash
+          docker exec -it con /bin/bash
           ls
