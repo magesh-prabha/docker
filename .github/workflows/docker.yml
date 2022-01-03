@@ -50,7 +50,6 @@ jobs:
         run: |
           docker exec -i con /bin/bash -c "pwd
           ls
-          pwd
           cd ..
           ls
           cd ..
