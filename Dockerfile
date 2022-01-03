@@ -1,4 +1,7 @@
 FROM python:latest
+
+MAINTAINER Magesh Prabha <prabhabala100@gmail.com>
+
 RUN apt-get -qq update
 RUN apt-get install -y vim
 RUN apt-get install -y rsync
