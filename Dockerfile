@@ -2,13 +2,9 @@ FROM python:latest
 RUN apt-get -qq update
 RUN apt-get install -y vim
 RUN apt-get install -y rsync
-RUN apt-get install software-properties-common
-RUN apt-get update
 
-RUN add-apt-repository ppa:openjdk-r/ppa && \
-    apt-get update && \
-    apt-get install -y openjdk-7-jdk && \
-    apt-get install -y ant && \
+RUN apt-get update && \
+    apt-get install -y openjdk-11-jre-headless && \
     apt-get clean;
     
 RUN apt-get update && \
