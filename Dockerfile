@@ -8,7 +8,7 @@ RUN apt-get install -y rsync
 
 RUN apt-get update && \
     apt-get install -y openjdk-11-jre-headless && \
-    apt-get clean;
+    apt-get clean
 
 WORKDIR /my_dbscripts
 RUN curl https://www.exasol.com/support/secure/attachment/111497/EXAplus-7.0.0.tar.gz --output EXAplus-7.0.0.tar.gz
