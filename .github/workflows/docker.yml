@@ -48,7 +48,7 @@ jobs:
         
       - name: Working inside container
         run: |
-          docker exec -i con /bin/bash "pwd"
+          docker exec -i con /bin/bash -c "pwd"
           ls
           pwd
           cd ..
