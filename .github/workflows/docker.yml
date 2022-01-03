@@ -40,3 +40,9 @@ jobs:
         
       - name: Python
         run: python Python/pythoncode.py
+        
+      - name: Docker images list
+        run: docker images
+        
+      - name: Docker container list
+        run: docker ps -a
