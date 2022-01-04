@@ -1,10 +1,9 @@
 FROM java:latest
 
-VOLUME /tmp/docker_vol/
+VOLUME /docker_vol/
 
 MAINTAINER Magesh Prabha <prabhabala100@gmail.com>
 
-RUN apt-get -qq update
 RUN apt-get install -y python
 RUN apt-get install -y vim
 RUN apt-get install -y rsync
