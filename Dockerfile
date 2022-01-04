@@ -5,7 +5,6 @@ VOLUME /docker_vol/
 MAINTAINER Magesh Prabha <prabhabala100@gmail.com>
 
 RUN apt-get install -y python
-RUN apt-get install -y vim
 RUN apt-get install -y rsync
 
 WORKDIR /my_dbscripts
