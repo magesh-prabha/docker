@@ -5,12 +5,10 @@ name: Creating a docker image and running a container using github actions
 on:
   push:
     branches: [ main ]
-  pull_request:
-    branches: [ main ]
-
+    
 jobs:
   image:
-    runs-on: ubuntu-latest
+    runs-on: alpine
 
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
@@ -25,11 +23,6 @@ jobs:
         
       - name: Docker hub login
         run: echo "Logging into docker hub" | sudo docker login -u ${{secrets.DOCKERUSERNAME}} --password ${{secrets.DOCKERPASSWORD}}
-      
-      - name: Repository check out into the runner
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 2
         
       - name: Push image
         run: echo "pushing image into docker hub" | sudo docker push mageshprabha/dockerrepo
