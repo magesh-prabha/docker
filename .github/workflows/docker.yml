@@ -31,13 +31,18 @@ jobs:
         run: |
           docker run -i --name=con -v /home/runner/work/docker/docker:/docker_vol/ mageshprabha/dockerrepo /bin/bash
           docker start con
+          echo "Present working directory of the host ...."
           pwd
           
       - name: List of files
-        run: ls
+        run: |
+          echo "Listing the files in the host ...."
+          ls
         
       - name: Python
-        run: python Python/pythoncode.py
+        run: |
+          echo "Executing python code in the host ...."
+          python Python/pythoncode.py
         
       - name: Docker images list
         run: docker images mageshprabha/dockerrepo
@@ -47,7 +52,10 @@ jobs:
         
       - name: Working inside container
         run: |
-          docker exec -i con /bin/bash -c "pwd
+          docker exec -i con /bin/bash -c "
+          echo "Present working directory of the container ...."
+          pwd
+          echo "Listing the files in the container ...."
           ls
           java -version
           python --version
