@@ -36,7 +36,7 @@ jobs:
           
       - name: List of files
         run: |
-          echo "Listing the files in the host ...."
+          echo "Listing the files in the host ....."
           ls
         
       - name: Python
