@@ -53,7 +53,7 @@ jobs:
       - name: Working inside container
         run: |
           docker exec -i con /bin/bash -c "
-          echo 'Present working directory of the container ....'
+          echo 'Present working directory of the container ...'
           pwd
           echo 'Listing the files in the container ....'
           ls
