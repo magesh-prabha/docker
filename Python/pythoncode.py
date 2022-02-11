@@ -2,6 +2,6 @@ import os
 
 test=os.environ['TEST']
 if test=="{'dummy_test':{'username':'un','password':'pass'},'dummy':{'username':'na','password':'pw'}}":
-  print("y")
+  print("y",len(test))
 else:
-  print("n")
+  print("n",len(test))
