@@ -5,9 +5,8 @@ name: Creating a docker image and running a container using github actions
 on:
   push:
     branches: [ main ]
-    
 env:
-  TEST:${{secrets.TEST}}
+  TEST: ${{secrets.TEST}}
     
 jobs:
   image:
