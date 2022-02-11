@@ -1,7 +1,7 @@
 import os
 
 test=os.environ['TEST']
-if test=="test":
+if test=="{'dummy_test':{'username':'un','password':'pass'},'dummy':{'username':'na','password':'pw'}}":
   print("y")
 else:
   print("n")
