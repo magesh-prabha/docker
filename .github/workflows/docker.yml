@@ -7,7 +7,7 @@ on:
     branches: [ main ]
     
 env:
-  DUMMY_CON:${{secrets.TEST}}
+  TEST:${{secrets.TEST}}
     
 jobs:
   image:
