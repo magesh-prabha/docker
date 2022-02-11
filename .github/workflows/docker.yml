@@ -21,7 +21,7 @@ jobs:
         run: echo This code creates a docker image and runs a docker container out of it
 
       - name: Docker image creation
-        run: docker build -t mageshprabha/dockerrepo .
+        run: docker build --build-arg TEST="${TEST}" -t mageshprabha/dockerrepo .
         
       - name: Docker hub login
         run: echo "Logging into docker hub" | sudo docker login -u ${{secrets.DOCKERUSERNAME}} --password ${{secrets.DOCKERPASSWORD}}
