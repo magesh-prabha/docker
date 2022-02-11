@@ -5,4 +5,3 @@ if test=="{'dummy_test':{'username':'un','password':'pass'},'dummy':{'username':
   print("y")
 else:
   print("n")
-print ("Hello World")
