@@ -4,8 +4,6 @@ name: Creating a docker image and running a container using github actions
 on:
   push:
     branches: [ main ]
-env:
-  TEST: ${{secrets.TEST}}
     
 jobs:
   image:
@@ -31,7 +29,7 @@ jobs:
       - name: Run container
         run: |
           #docker run -i --name=con -v /home/runner/work/docker/docker:/docker_vol/ mageshprabha/dockerrepo /bin/bash
-          docker run --rm -t nakabonne/ali ali -m get -c 250 -b '{"shortid":"magprab","object_name":"s3_to_redshift.sales_parquet_datatype_parallel"}' --rate=50 --duration=1m https://b4qdhc56da.execute-api.eu-central-1.amazonaws.com/dev/access_redshift
+          docker run --rm -t nakabonne/ali ali -m GET -c 250 -b '{"shortid":"magprab","object_name":"s3_to_redshift.sales_parquet_datatype_parallel"}' --rate=50 --duration=1m https://b4qdhc56da.execute-api.eu-central-1.amazonaws.com/dev/access_redshift
       #    docker start ali
       #    echo "Present working directory of the host ...."
       #    pwd
