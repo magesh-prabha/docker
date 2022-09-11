@@ -1,4 +1,3 @@
-# This is a basic workflow to help you get started with Actions
 
 name: Creating a docker image and running a container using github actions
 
