@@ -31,7 +31,7 @@ jobs:
       - name: Run container
         run: |
           #docker run -i --name=con -v /home/runner/work/docker/docker:/docker_vol/ mageshprabha/dockerrepo /bin/bash
-          docker run --rm -i nakabonne/ali ali --duration=10m --rate=100 https://b4qdhc56da.execute-api.eu-central-1.amazonaws.com/dev/access_redshift
+          docker run --rm -it nakabonne/ali ali --duration=10m --rate=100 https://b4qdhc56da.execute-api.eu-central-1.amazonaws.com/dev/access_redshift
       #    docker start ali
       #    echo "Present working directory of the host ...."
       #    pwd
