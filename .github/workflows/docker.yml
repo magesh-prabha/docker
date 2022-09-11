@@ -20,7 +20,7 @@ jobs:
         run: echo This code creates a docker image and runs a docker container out of it
 
       - name: Docker image creation
-        run: docker build --build-arg TEST="${TEST}" -t mageshprabha/dockerrepo .
+        run: docker build --build-arg -t mageshprabha/dockerrepo .
         
       - name: Docker hub login
         run: echo "Logging into docker hub" | sudo docker login -u ${{secrets.DOCKERUSERNAME}} --password ${{secrets.DOCKERPASSWORD}}
@@ -30,34 +30,35 @@ jobs:
         
       - name: Run container
         run: |
-          docker run -i --name=con -v /home/runner/work/docker/docker:/docker_vol/ mageshprabha/dockerrepo /bin/bash
-          docker start con
+          #docker run -i --name=con -v /home/runner/work/docker/docker:/docker_vol/ mageshprabha/dockerrepo /bin/bash
+          docker run --rm -it nakabonne/ali ali
+          docker start ali
           echo "Present working directory of the host ...."
           pwd
           
-      - name: List of files
-        run: |
-          echo "Listing the files in the host ....."
-          ls
+      #- name: List of files
+      #  run: |
+      #    echo "Listing the files in the host ....."
+      #    ls
         
-      - name: Python
-        run: |
-          echo "Executing python code in the host ...."
-          python Python/pythoncode.py
+      #- name: Python
+      #  run: |
+      #    echo "Executing python code in the host ...."
+      #    python Python/pythoncode.py
         
-      - name: Docker images list
-        run: docker images mageshprabha/dockerrepo
+      #- name: Docker images list
+      #  run: docker images mageshprabha/dockerrepo
         
-      - name: Docker container list
-        run: docker ps
+      #- name: Docker container list
+      #  run: docker ps
         
       - name: Working inside container
         run: |
-          docker exec -i con /bin/bash -c "
+          docker exec -i ali /bin/bash -c "
           echo 'Present working directory of the container ...'
           pwd
           echo 'Listing the files in the container ....'
           ls
-          java -version
-          python --version
-          python /docker_vol/Python/pythoncode.py"
+          #java -version
+          #python --version
+          #python /docker_vol/Python/pythoncode.py"
