@@ -31,7 +31,7 @@ jobs:
       - name: Run container
         run: |
           #docker run -i --name=con -v /home/runner/work/docker/docker:/docker_vol/ mageshprabha/dockerrepo /bin/bash
-          docker run --rm -it nakabonne/ali ali -h
+          docker run --rm -it nakabonne/ali:v0.7.5 ali -h
       #    docker start ali
       #    echo "Present working directory of the host ...."
       #    pwd
