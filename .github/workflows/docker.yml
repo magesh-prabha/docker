@@ -29,8 +29,8 @@ jobs:
       - name: Run container
         run: |
           #docker run -i --name=con -v /home/runner/work/docker/docker:/docker_vol/ mageshprabha/dockerrepo /bin/bash
-          docker run --rm -t nakabonne/ali ali -m GET -c 250 -b '{"shortid":"magprab","object_name":"s3_to_redshift.sales_parquet_datatype_parallel"}' --rate=50 --duration=1m https://b4qdhc56da.execute-api.eu-central-1.amazonaws.com/dev/access_redshift
-      #    docker start ali
+          docker run --rm -t nakabonne/ali
+          docker start ali
       #    echo "Present working directory of the host ...."
       #    pwd
           
@@ -47,12 +47,13 @@ jobs:
       #- name: Docker images list
       #  run: docker images mageshprabha/dockerrepo
         
-      #- name: Docker container list
-      #  run: docker ps
+      - name: Docker container list
+        run: docker ps
         
-      #- name: Working inside container
-      #  run: |
-      #    docker exec -i ali /bin/bash -c "
+      - name: Working inside container
+        run: |
+          docker exec -i ali /bin/bash -c "
+          ali -c 250 -b '{"shortid":"magprab","object_name":"s3_to_redshift.sales_parquet_datatype_parallel"}' --rate=50 --duration=1m https://b4qdhc56da.execute-api.eu-central-1.amazonaws.com/dev/access_redshift"
       #    echo 'Present working directory of the container ...'
       #    pwd
       #    echo 'Listing the files in the container ....'
